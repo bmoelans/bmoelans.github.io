@@ -101,12 +101,30 @@
             editor = 'sublime' --wait
         </pre>
     </dd>
+
+    <dt><a href-"https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a></dt>
+    <dd>Better looking git diff in CMD</dd>
+
 </dl>
 
 <h3>Aliases</h3>
 <dl>
     <dt><tt>root = rev-parse --show-toplevel</tt></dt>
     <dd>So with <tt>git root</tt> I can see root of git tree and with <tt>cd $(git root)</tt></dd>
+
+    <dt>l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all<dt>
+    <dd></dd>
+
+    <dt>ll = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(  reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all</dt>
+    <dd></dd>
+
+    <dt>reset-commit = reset --soft HEAD~1</dt><dd></dd>
+    <dt>reset-commit-hard = reset --hard HEAD~1      </dt><dd></dd>
+    <dt>reset-commit-clean = !git reset --hard HEAD~1 && git clean -fd</dt><dd></dd>
+    <dt>reset-to-origin = !git reset --hard $(git upstream-name)</dt><dd></dd>
+
+    <dt>upstream-name = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)</dt>
+    <dd>Get name of the upstream branch</dd>
 </section>
 </body>
 </html>
